@@ -5,6 +5,11 @@ import TaskItem from './task';
 function App() {
   const [toDoList, changeList] = useState([]);
 
+  const checkLocalStorage = () => {
+    if (localStorage.toDoList === null) return []
+    return JSON.parse(localStorage.toDoList);
+  }
+
   const newTask = (e) => {
     if (e.keyCode !== 13) return;
     changeList([...toDoList, { task: e.target.value, done: false, id: toDoList.length }]);
@@ -18,7 +23,16 @@ function App() {
     console.log(toDoList);
   };
 
-
+  const removeTask = (id) => {
+    let tempArray = [...toDoList];
+    tempArray = tempArray.filter((item) => item.id !== id);
+    tempArray = tempArray.map((item, index) => ({
+      ...item,
+      id: index,
+    }));
+    changeList([...tempArray]);
+    console.log(toDoList);
+  };
 
   return (
     <div className="App">
