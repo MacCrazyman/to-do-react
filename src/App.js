@@ -3,12 +3,16 @@ import './App.css';
 import TaskItem from './task';
 
 function App() {
-  const [toDoList, changeList] = useState([]);
-
   const checkLocalStorage = () => {
-    if (localStorage.toDoList === null) return []
-    return JSON.parse(localStorage.toDoList);
-  }
+    if (localStorage.toDoList == null) return [];
+    return JSON.parse(localStorage.getItem('toDoList'));
+  };
+
+  const [toDoList, changeList] = useState(checkLocalStorage);
+
+  const saveStorage = () => {
+    localStorage.setItem('toDoList', JSON.stringify(toDoList));
+  };
 
   const newTask = (e) => {
     if (e.keyCode !== 13) return;
@@ -20,7 +24,6 @@ function App() {
     const tempArray = [...toDoList];
     tempArray[id].done = !tempArray[id].done;
     changeList([...tempArray]);
-    console.log(toDoList);
   };
 
   const removeTask = (id) => {
@@ -31,8 +34,9 @@ function App() {
       id: index,
     }));
     changeList([...tempArray]);
-    console.log(toDoList);
   };
+
+  saveStorage();
 
   return (
     <div className="App">
