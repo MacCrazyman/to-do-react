@@ -7,9 +7,18 @@ function App() {
 
   const newTask = (e) => {
     if (e.keyCode !== 13) return;
-    changeList([...toDoList, { task: e.target.value, done: false, id: toDoList.length - 1 }]);
+    changeList([...toDoList, { task: e.target.value, done: false, id: toDoList.length }]);
     e.target.value = '';
   };
+
+  const toggleCheck = (id) => {
+    const tempArray = [...toDoList];
+    tempArray[id].done = !tempArray[id].done;
+    changeList([...tempArray]);
+    console.log(toDoList);
+  };
+
+
 
   return (
     <div className="App">
@@ -24,7 +33,7 @@ function App() {
       <div className="appContainer">
         <input type="text" placeholder="Enter new Task" onKeyDown={newTask} />
         <ul className="taskList">
-          <TaskItem list={toDoList} />
+          <TaskItem list={toDoList} checkmark={toggleCheck} delete={removeTask} />
         </ul>
       </div>
     </div>

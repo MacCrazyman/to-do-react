@@ -1,10 +1,10 @@
-function TaskItem(list) {
+function TaskItem(props) {
   return (
-    list.list.map((activity) => (
+    props.list.map((activity) => (
       <li key={activity.id}>
-        <input type="checkbox" defaultChecked={activity.done} />
+        <input type="checkbox" checked={activity.done} onChange={() => props.checkmark(activity.id)} />
         <input type="text" placeholder={activity.task} />
-        <button type="button" className="deleteButton">&#128465;</button>
+        <button type="button" className="deleteButton" onClick={() => props.delete(activity.id)}>&#128465;</button>
       </li>
     ))
   );
