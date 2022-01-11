@@ -11,7 +11,7 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App />}>
+        <Route path="to-do-react/" element={<App />}>
           <Route index element={<ToDoApp />} />
           <Route path="about" element={<About />} />
           <Route path="*" element={<ErrorPage />} />

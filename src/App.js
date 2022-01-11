@@ -9,10 +9,10 @@ function App() {
       <nav>
         <ul>
           <li>
-            <Link to="/about"> About</Link>
+            <Link to="about"> About</Link>
           </li>
           <li>
-            <Link to="/">To do APP</Link>
+            <Link to="/to-do-react/">To do APP</Link>
           </li>
         </ul>
       </nav>
