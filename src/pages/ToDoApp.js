@@ -15,6 +15,7 @@ const ToDoApp = () => {
 
   const newTask = (e) => {
     if (e.keyCode !== 13) return;
+    if (e.target.value.trim() === '') return;
     changeList([...toDoList, { task: e.target.value, done: false, id: toDoList.length }]);
     e.target.value = '';
   };
