@@ -4,7 +4,7 @@ import './task.css';
 function TaskItem(props) {
   return (
     props.list.map((activity) => (
-      <li key={activity.id}>
+      <li key={activity.id} className="taskItem">
         <input type="checkbox" checked={activity.done} onChange={() => props.checkmark(activity.id)} />
         <input
           type="text"

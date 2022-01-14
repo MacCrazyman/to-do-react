@@ -1,3 +1,7 @@
 .marked {
   text-decoration: line-through;
 }
+
+.taskItem {
+  width: fit-content;
+}

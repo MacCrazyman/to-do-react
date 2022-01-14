@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import TaskItem from './task';
+import './ToDoAPP.css';
 
 const ToDoApp = () => {
   const checkLocalStorage = () => {
@@ -44,7 +45,6 @@ const ToDoApp = () => {
       if (index === id) tempItem.task = e.target.value;
       return tempItem;
     }));
-    // e.target.value = '';
   };
 
   saveStorage();
@@ -59,7 +59,7 @@ const ToDoApp = () => {
         </h2>
       </div>
       <div className="appContainer">
-        <input type="text" placeholder="Enter new Task" onKeyDown={newTask} />
+        <input className="taskInput" type="text" placeholder="Enter new Task" onKeyDown={newTask} />
         <ul className="taskList">
           <TaskItem
             list={toDoList}
