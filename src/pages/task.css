@@ -10,12 +10,12 @@
   background-color: greenyellow;
 }
 
-.taskItem>input[type='text'] {
+.taskItem > input[type='text'] {
   font-size: 1.125rem;
   font-weight: 600;
 }
 
-.taskItem>input[type='text']:focus-visible {
+.taskItem > input[type='text']:focus-visible {
   color: black;
   background-color: lightgray;
 }

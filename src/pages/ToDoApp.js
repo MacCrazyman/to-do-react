@@ -38,7 +38,10 @@ const ToDoApp = () => {
   };
 
   const editTask = (e, id) => {
-    if (e.target.value === '') return;
+    if (e.target.value === '') {
+      e.target.value = toDoList[id].task;
+      return;
+    }
     const tempArray = [...toDoList];
     changeList(tempArray.map((item, index) => {
       const tempItem = item;

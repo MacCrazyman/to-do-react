@@ -11,13 +11,13 @@
   max-height: 2rem;
 }
 
-.navigation>li {
+.navigation > li {
   margin: 0.5rem 0.5rem;
   font-size: 1em;
   font-weight: bold;
 }
 
-a{
+a {
   transition: all 0.3s ease-in-out;
   color: black;
 }
