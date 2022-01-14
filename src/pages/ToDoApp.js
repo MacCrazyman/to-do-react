@@ -36,6 +36,17 @@ const ToDoApp = () => {
     changeList([...tempArray]);
   };
 
+  const editTask = (e, id) => {
+    if (e.target.value === '') return;
+    const tempArray = [...toDoList];
+    changeList(tempArray.map((item, index) => {
+      const tempItem = item;
+      if (index === id) tempItem.task = e.target.value;
+      return tempItem;
+    }));
+    // e.target.value = '';
+  };
+
   saveStorage();
   return (
     <div>
@@ -50,7 +61,12 @@ const ToDoApp = () => {
       <div className="appContainer">
         <input type="text" placeholder="Enter new Task" onKeyDown={newTask} />
         <ul className="taskList">
-          <TaskItem list={toDoList} checkmark={toggleCheck} delete={removeTask} />
+          <TaskItem
+            list={toDoList}
+            checkmark={toggleCheck}
+            delete={removeTask}
+            updateTask={editTask}
+          />
         </ul>
       </div>
     </div>

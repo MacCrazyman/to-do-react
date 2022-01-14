@@ -6,7 +6,12 @@ function TaskItem(props) {
     props.list.map((activity) => (
       <li key={activity.id}>
         <input type="checkbox" checked={activity.done} onChange={() => props.checkmark(activity.id)} />
-        <input type="text" placeholder={activity.task} className={activity.done ? 'marked' : 'normal'} />
+        <input
+          type="text"
+          defaultValue={activity.task}
+          className={activity.done ? 'marked' : 'normal'}
+          onBlur={(e) => props.updateTask(e, activity.id)}
+        />
         <button type="button" className="deleteButton" onClick={() => props.delete(activity.id)}>
           <FaTrashAlt />
           {' '}
