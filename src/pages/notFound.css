@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.container {
+  background-color: red;
+}
+
+.message {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.paragraph {
+  font-size: 3rem;
+}

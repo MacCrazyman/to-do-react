@@ -1,0 +1,31 @@
+
+.taskItem {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  gap: 5px;
+  padding: 5px;
+  border: 2px solid green;
+  border-radius: 0.5rem;
+  background-color: greenyellow;
+}
+
+.taskItem > input[type='text'] {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.taskItem > input[type='text']:focus-visible {
+  color: black;
+  background-color: lightgray;
+}
+
+.normal {
+  color: red;
+}
+
+.marked {
+  text-decoration: line-through;
+  color: lightgray;
+  font-style: italic;
+}
