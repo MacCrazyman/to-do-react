@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <nav>
-        <ul>
+        <ul className="navigation">
           <li>
             <Link to="about"> About</Link>
           </li>

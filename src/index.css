@@ -14,6 +14,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: lightskyblue;
 }
 
 code {
@@ -24,4 +25,8 @@ code {
     Consolas,
     'Courier New',
     monospace;
+}
+
+ul {
+  list-style-type: none;
 }
